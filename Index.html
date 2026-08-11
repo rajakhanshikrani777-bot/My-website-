@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>میری ویب سائٹ</title>
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>میری ویب سائٹ</h1>
+
+        <nav>
+            <a href="#home">ہوم</a>
+            <a href="#about">میرے بارے میں</a>
+            <a href="#contact">رابطہ کریں</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Home -->
+        <section id="home">
+            <h2>السلام علیکم</h2>
+            <p>میری ویب سائٹ میں خوش آمدید۔</p>
+
+            <button type="button" onclick="showMessage()">کلک کریں</button>
+
+            <p id="message"></p>
+
+            <!-- اپنی تصویر یہاں دکھانے کے لیے تصویر کا نام screenshot.jpg رکھیں -->
+            <div class="image-box">
+                <img src="screenshot.jpg" alt="میری تصویر">
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+            <h2>میرے بارے میں</h2>
+            <p>
+                یہ میری پہلی ویب سائٹ ہے۔
+                میں ویب ڈویلپمنٹ سیکھ رہا ہوں۔
+            </p>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>رابطہ کریں</h2>
+
+            <!-- IMPORTANT:
+                 YOUR_EMAIL@example.com کو اپنی اصل email سے replace کریں۔
+            -->
+            <form action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST">
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="اپنا نام لکھیں"
+                    required
+                >
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="اپنی email لکھیں"
+                    required
+                >
+
+                <textarea
+                    name="message"
+                    placeholder="اپنا پیغام لکھیں"
+                    rows="6"
+                    required
+                ></textarea>
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="میری ویب سائٹ سے نیا پیغام"
+                >
+
+                <input
+                    type="hidden"
+                    name="_template"
+                    value="table"
+                >
+
+                <button type="submit">پیغام بھیجیں</button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 میری ویب سائٹ - تمام حقوق محفوظ ہیں</p>
+    </footer>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
