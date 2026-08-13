@@ -1,0 +1,208 @@
+/* =========================
+   میری ویب سائٹ - Style CSS
+   ========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    background: #f4f7fb;
+    color: #222;
+}
+
+/* Header */
+header {
+    background: #1f4e79;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    background: #163a5c;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #ffffff;
+    color: #1f4e79;
+}
+
+/* Main sections */
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+section {
+    background: white;
+    margin: 20px 0;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+section h2 {
+    color: #1f4e79;
+    margin-bottom: 12px;
+    font-size: 26px;
+}
+
+section p {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+/* Button */
+button {
+    border: none;
+    background: #1f4e79;
+    color: white;
+    padding: 11px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #163a5c;
+    transform: translateY(-2px);
+}
+
+#message {
+    color: #1f4e79;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Image */
+.image-box {
+    margin-top: 25px;
+}
+
+.image-box img {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact form */
+form {
+    max-width: 600px;
+    margin: 20px auto 0;
+    text-align: right;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #1f4e79;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Form button */
+form button {
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    background: #1f4e79;
+    color: white;
+    text-align: center;
+    padding: 18px 10px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    header {
+        padding: 20px 10px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav {
+        gap: 7px;
+    }
+
+    nav a {
+        padding: 7px 12px;
+        font-size: 14px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    section {
+        padding: 25px 15px;
+    }
+
+    section h2 {
+        font-size: 23px;
+    }
+
+    section p {
+        font-size: 16px;
+    }
+
+    input,
+    textarea {
+        font-size: 15px;
+    }
+}
