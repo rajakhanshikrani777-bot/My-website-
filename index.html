@@ -1,107 +1,241 @@
-<!DOCTYPE html>
-<html lang="ur" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>میری ویب سائٹ</title>
-
-    <!-- CSS file -->
+<!doctype html>
+<html lang="en">
+  <head>
     <link rel="stylesheet" href="style.css">
-</head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A beautiful all-in-one calculator with basic arithmetic and advanced calculation categories."
+    />
+    <title>AdvaCalc — Advanced Calculator</title>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#5d67f1" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="AdvaCalc" />
+    <link rel="apple-touch-icon" href="icons/icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="scripts/script.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Calculator navigation">
+        <div class="brand">
+          <div class="brand-icon">A</div>
+          <div>
+            <h1>AdvaCalc</h1>
+            <p>Smart calculation suite</p>
+          </div>
+        </div>
 
-<body>
+        <nav class="mode-nav" aria-label="Calculator modes">
+          <button class="nav-btn active" data-view="basicView">
+            <span class="nav-icon">⌗</span>
+            <span>Basic Calculator</span>
+          </button>
 
-    <header>
-        <h1>میری ویب سائٹ</h1>
+          <button class="nav-btn" data-view="advancedView">
+            <span class="nav-icon">⌁</span>
+            <span>Advanced Tools</span>
+          </button>
 
-        <nav>
-            <a href="#home">ہوم</a>
-            <a href="#about">میرے بارے میں</a>
-            <a href="#contact">رابطہ کریں</a>
+          <button class="nav-btn" data-view="historyView">
+            <span class="nav-icon">◷</span>
+            <span>History</span>
+          </button>
         </nav>
-    </header>
 
-    <main>
+        <div class="sidebar-footer">
+          <button
+            id="themeToggle"
+            class="theme-toggle"
+            aria-label="Toggle dark mode"
+          >
+            <span id="themeIcon">☾</span>
+            <span>Toggle theme</span>
+          </button>
+          <p>Designed for fast, accurate everyday calculations.</p>
+        </div>
+      </aside>
 
-        <!-- Home -->
-        <section id="home">
-            <h2>السلام علیکم</h2>
-            <p>میری ویب سائٹ میں خوش آمدید۔</p>
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">ALL-IN-ONE CALCULATION TOOL</p>
+            <h2 id="viewTitle">Basic Calculator</h2>
+          </div>
+          <div class="topbar-actions">
+            <div class="status-pill"><span></span> Ready</div>
+            <button id="clearAllBtn" class="ghost-btn">Clear all</button>
+          </div>
+        </header>
 
-            <button type="button" onclick="showMessage()">کلک کریں</button>
+        <section id="basicView" class="view active">
+          < class="basic-layout">
+            <article class="calculator-card glass">
+              <div class="display-wrap">
+                <div id="basicExpression" class="expression" aria-live="polite">
+                  0
+                </div>
+                <div id="basicResult" class="result" aria-live="polite">0</div>
+              </div>
 
-            <p id="message"></p>
+              <div class="memory-row">
+                <button data-action="memory-clear">MC</button>
+                <button data-action="memory-recall">MR</button>
+                <button data-action="memory-add">M+</button>
+                <button data-action="memory-subtract">M−</button>
+              </div>
 
-            <!-- اپنی تصویر یہاں دکھانے کے لیے تصویر کا نام screenshot.jpg رکھیں -->
-            <div class="image-box">
-                <img src="screenshot.jpg" alt="میری تصویر">
+              <div class="keypad" aria-label="Basic calculator keypad">
+                <button class="key utility" data-value="clear">clear</button>
+                <button class="key utility" data-value="backspace">⌫</button>
+                <button class="key utility" data-value="%">%</button>
+                <button class="key operator" data-value="/">÷</button>
+
+                <button class="key" data-value="7">7</button>
+                <button class="key" data-value="8">8</button>
+                <button class="key" data-value="9">9</button>
+                <button class="key operator" data-value="*">×</button>
+
+                <button class="key" data-value="4">4</button>
+                <button class="key" data-value="5">5</button>
+                <button class="key" data-value="6">6</button>
+                <button class="key operator" data-value="-">−</button>
+
+                <button class="key" data-value="1">1</button>
+                <button class="key" data-value="2">2</button>
+                <button class="key" data-value="3">3</button>
+                <button class="key operator" data-value="+">+</button>
+
+                <button class="key utility" data-value="sign">±</button>
+                <button class="key" data-value="0">0</button>
+                <button class="key" data-value=".">.</button>
+                <button class="key equals" data-value="=">=</button>
+              </div>
+            </article>
+    
+            <aside class="quick-panel glass">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">QUICK FUNCTIONS</p>
+                  <h3>Scientific shortcuts</h3>
+                </div>
+              </div>
+
+              <div class="quick-grid">
+                <button data-science="sqrt">√x</button>
+                <button data-science="square">x²</button>
+                <button data-science="reciprocal">1/x</button>
+                <button data-science="pi">π</button>
+                <button data-science="sin">sin</button>
+                <button data-science="cos">cos</button>
+                <button data-science="tan">tan</button>
+                <button data-science="log">log</button>
+                <button data-science="ln">ln</button>
+                <button data-science="exp">eˣ</button>
+                <button data-science="factorial">x!</button>
+                <button data-science="random">RAND</button>
+              </div>
+
+              <div class="tip-card">
+                <span class="tip-icon">✦</span>
+                <div>
+                  <strong>Keyboard supported</strong>
+                  <p>
+                    Use number keys, operators, Enter, Backspace, and Escape.
+                  </p>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="advancedView" class="view">
+          <div class="advanced-layout">
+            <aside class="category-panel glass">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">CATEGORIES</p>
+                  <h3>Choose a tool</h3>
+                </div>
+              </div>
+              <div id="categoryList" class="category-list"></div>
+            </aside>
+
+            <section class="tool-workspace glass">
+              <div class="workspace-header">
+                <div class="workspace-icon" id="workspaceIcon">🌡️</div>
+                <div>
+                  <p class="eyebrow" id="workspaceCategory">CONVERTER</p>
+                  <h3 id="workspaceTitle">Temperature Converter</h3>
+                  <p id="workspaceDescription">
+                    Convert between Fahrenheit, Celsius, and Kelvin.
+                  </p>
+                </div>
+              </div>
+
+              <div class="tool-selector-wrap">
+                <label for="toolSelect">Calculation type</label>
+                <select id="toolSelect"></select>
+              </div>
+
+              <div id="dynamicForm" class="dynamic-form"></div>
+
+              <div class="workspace-actions">
+                <button id="calculateAdvancedBtn" class="primary-btn">
+                  Calculate
+                </button>
+                <button id="resetAdvancedBtn" class="secondary-btn">
+                  Reset
+                </button>
+              </div>
+
+              <div id="advancedResultCard" class="result-card">
+                <p class="result-label">Result</p>
+                <div id="advancedResult" class="advanced-result">
+                  Enter values and select Calculate.
+                </div>
+                <div id="advancedFormula" class="formula"></div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section id="historyView" class="view">
+          <article class="history-panel glass">
+            <div class="history-header">
+              <div>
+                <p class="eyebrow">RECENT ACTIVITY</p>
+                <h3>Calculation History</h3>
+              </div>
+              <button id="clearHistoryBtn" class="ghost-btn">
+                Clear history
+              </button>
             </div>
+            <div id="historyList" class="history-list"></div>
+          </article>
         </section>
-
-        <!-- About -->
-        <section id="about">
-            <h2>میرے بارے میں</h2>
-            <p>
-                یہ میری پہلی ویب سائٹ ہے۔
-                میں ویب ڈویلپمنٹ سیکھ رہا ہوں۔
-            </p>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact">
-            <h2>رابطہ کریں</h2>
-
-            <!-- IMPORTANT:
-                 waximkhanxhikrani@gmail.com کو اپنی اصل email سے replace کریں۔
-            -->
-            <form action="https://formsubmit.co/waximkhanxhikrani@gmail.com" method="POST">
-
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="اپنا نام لکھیں"
-                    required
-                >
-
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="اپنی email لکھیں"
-                    required
-                >
-
-                <textarea
-                    name="message"
-                    placeholder="اپنا پیغام لکھیں"
-                    rows="6"
-                    required
-                ></textarea>
-
-                <input
-                    type="hidden"
-                    name="_subject"
-                    value="میری ویب سائٹ سے نیا پیغام"
-                >
-
-                <input
-                    type="hidden"
-                    name="_template"
-                    value="table"
-                >
-
-                <button type="submit">پیغام بھیجیں</button>
-
-            </form>
-        </section>
-
-    </main>
+      </main>
+    </div>
 
     <footer>
-        <p>© 2026 میری ویب سائٹ - تمام حقوق محفوظ ہیں</p>
+      <p>
+        &copy; 2026 AdvaCalc, 2026 | All rights reserved | Developed by
+        <strong><em>Wasim Riaz</em></strong
+        >'
+      </p>
     </footer>
-
-    <!-- JavaScript file -->
-    <script src="script.js"></script>
-
-</body>
-</html>
+<script src="script.js" defer></script>
+  </body>
+        </html>
